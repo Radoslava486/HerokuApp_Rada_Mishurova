@@ -31,9 +31,9 @@ public class DropdownTest extends BasicTest {
         List <String> actualOptions = options.stream().map(option -> option.getText()).toList();
         Assert.assertEquals(expectedOptions, actualOptions);
         select.selectByIndex(2);
-        Assert.assertEquals(driver.findElement(By.xpath("//select[@id='dropdown']/option[@value='2']")).isSelected(), true, "Option 2 is selected");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Option 2", "Option 2 is selected");
         select.selectByVisibleText("Option 1");
-        Assert.assertEquals(driver.findElement(By.xpath("//select[@id='dropdown']/option[@value='1']")).isSelected(), true, "Option 1 is selected");
+        Assert.assertEquals(select.getFirstSelectedOption().getText(), "Option 1", "Option 1 is selected");
 
 
 

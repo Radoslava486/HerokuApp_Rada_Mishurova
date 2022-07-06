@@ -22,8 +22,9 @@ public class AddRemoveElementsTest extends BasicTest {
             addButton.click();
             deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
             deleteButtons.get(0).click();
+            deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
             Assert.assertEquals(deleteButtons.size(), 1, "One button remains");
-// этот провалился на проверке
+
 
         }
     }

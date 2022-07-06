@@ -1,7 +1,10 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class Typos extends BasicTest {
 
@@ -14,8 +17,9 @@ public class Typos extends BasicTest {
 
     @Test
     public void typosTest() {
-        String actualResult = driver.findElement(By.tagName("p")).getText();
+        List<WebElement> notificationMessage = driver.findElements(By.tagName("p"));
+        String actualResult = notificationMessage.get(1).getText();
         Assert.assertEquals(actualResult, "Sometimes you'll see a typo, other times you won't."," The word 'won,t' is misspelled");
-    //:(
+
     }
 }
