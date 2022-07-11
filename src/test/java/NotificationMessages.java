@@ -14,9 +14,8 @@ public class NotificationMessages extends BasicTest {
 
     @Test
     public void notificationMessageTest() {
-        driver.findElement(By.xpath("<a href=\\\"/notification_message\\\">Click here</a>")).click();
+        driver.findElement(By.linkText("Click here")).click();
         String expectedResult = driver.findElement(By.id("flash")).getText();
-        Assert.assertEquals(expectedResult, " Action unsuccesful, please try again");
+        Assert.assertEquals(expectedResult, "Action unsuccesful, please try again\n" + "×");
     }
-    //не нашел клик
 }
